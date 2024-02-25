@@ -169,3 +169,10 @@ Every request and it's response should be logged into MongoDB database collectio
 ## Deployment
 
 App should be distributed into Docker container with a clear setup instructions.
+
+## Technical Requirements
+
+- Use NodeJS with the Express.js framework.
+- Integrate MongoDB for data storage.
+- Write clean, readable, and well-documented code.
+- Implement basic security features like input validation to prevent common vulnerabilities.
