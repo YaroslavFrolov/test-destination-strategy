@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:4.4.20@sha256:1017784ad6042dc22b961690ee19b2a9bfd5d1c37f8cf4b7ab3f51f142200409
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: express-app
+    ports:
+      - "$PORT:$PORT"
+    depends_on:
+      - mongo
+    volumes:
+      - ./src:/app/src
