@@ -12,7 +12,7 @@
 
   see the `.env.example` file as example.
 
-- Execute `docker-compose up`
+- Execute `docker-compose up`. You may see warnings from mongo-image.. no worries..) Also make sure that port 27017 is free on your local machine.
 
 - Login to app. Execute POST requests to `http://localhost:{PORT}/jwt/login` with next body
 
@@ -27,7 +27,9 @@
 
   In response you will get a `token`. Save it to clipboard. TTL is 1 hour.
 
-- Now you can make POST requests to `http://localhost:{PORT}/api/event` with body according to task, for example:
+- Now you can make POST requests to `http://localhost:{PORT}/api/event` with body according to task. Also, you must add the **`Authorization`** header with value **`Bearer {token}`**.
+
+  Event-body example:
 
   ```json
   {
@@ -53,6 +55,10 @@
     ]
   }
   ```
+
+- _IMPORTANT NOTE: in dev-mode app should be started on node-18, not higher!!_
+
+- _Also, in dev-mode - install and start the mongodb on your local machine as systemd servive._
 
 <br />
 <br />

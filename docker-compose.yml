@@ -3,6 +3,8 @@ version: "3"
 services:
   mongo:
     container_name: mongo
+    # Weird version of mongo because of my local-machine specific.
+    # https://stackoverflow.com/questions/76028087/mongodb-in-docker-doesnt-work-crashed-with-4-exit-code
     image: mongo:4.4.20@sha256:1017784ad6042dc22b961690ee19b2a9bfd5d1c37f8cf4b7ab3f51f142200409
     volumes:
       - ./data:/data/db
